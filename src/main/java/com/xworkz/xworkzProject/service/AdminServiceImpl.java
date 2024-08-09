@@ -104,6 +104,7 @@ public class AdminServiceImpl implements AdminService {
             String systemUserName = System.getProperty("user.name");
             log.info("System Username:{} " , systemUserName);
             complaint.setModifiedBy(System.getProperty(systemUserName));
+            complaint.setDepartmentRead(false);
             complaintRepo.update(complaint); // Save the updated complaint
 
 

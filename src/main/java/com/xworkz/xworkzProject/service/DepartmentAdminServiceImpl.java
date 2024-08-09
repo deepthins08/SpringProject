@@ -173,6 +173,7 @@ public class DepartmentAdminServiceImpl implements DepartmentAdminService{
         ComplaintsDTO complaint = complaintRepo.findById(complaintId);
         if (complaint != null) {
             complaint.setEmployeeId(employeeId);
+            complaint.setEmployeeRead(false);
             complaintRepo.update(complaint); // Save the updated complaint
 
 //            HistoryDTO history = new HistoryDTO();

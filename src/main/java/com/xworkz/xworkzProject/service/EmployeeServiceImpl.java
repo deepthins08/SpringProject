@@ -68,6 +68,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         ComplaintsDTO complaint = complaintRepo.findById(complaintId);
         if (complaint != null) {
             complaint.setStatus(status);
+            complaint.setUserRead(false);
             if (comment != null && !comment.isEmpty()) {
                 complaint.setComments(comment);
             }

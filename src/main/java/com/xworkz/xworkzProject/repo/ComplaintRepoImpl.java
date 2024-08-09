@@ -74,9 +74,7 @@ public class ComplaintRepoImpl implements ComplaintRepo{
     public boolean update(ComplaintsDTO complaintsDTO) {
         EntityManager entityManager = this.entityManagerFactory.createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
-        complaintsDTO.setDepartmentRead(false);
-        complaintsDTO.setEmployeeRead(false);
-        complaintsDTO.setUserRead(false);
+
         try {
             entityTransaction.begin();
 
