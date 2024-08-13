@@ -38,7 +38,7 @@
                                         <a class="nav-link active text-light fs-5 " aria-current="page" href="departmentAdmin/departmentAdminLogout">Logout</a>
                                      </li>
 <li>
-                            <a class="nav-link active text-light fs-5 " aria-current="page" href="#"> ${departmentAdmin.name}</a>
+                            <a class="nav-link active text-light fs-5 " aria-current="page" href="#"> ${sessionScope.admin.name}</a>
             </li>
 
                         </ul>

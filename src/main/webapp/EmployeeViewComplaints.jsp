@@ -35,15 +35,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light fs-6" href="#" id="complaintsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        View Complaints
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="complaintsDropdown">
-                        <li><a class="dropdown-item" href="DepartmentAdmin.jsp">Home</a></li>
-                        <li><a class="dropdown-item" href="departmentAdmin/addEmployee">Add Employees</a></li>
-                    </ul>
-                </li>
+
+
+     <li class="nav-item">
+                <a class="nav-link active text-light fs-5 " aria-current="page" href="employeeLogout">Logout</a>
+      </li>
+        <li class="nav-item">
+                <a class="nav-link active text-light fs-5 " aria-current="page" href="DepartmentAdmin.jsp">Home</a>
+               </li>
+       <li class="nav-item">
+                               <a class="nav-link active text-light fs-5 " aria-current="page" href="#"> ${sessionScope.employee.name}</a>
+               </li>
             </ul>
         </div>
     </div>

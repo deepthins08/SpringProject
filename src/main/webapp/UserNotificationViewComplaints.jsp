@@ -28,16 +28,15 @@
         <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item">
-                         <a class="nav-link active text-light fs-5 " aria-current="page" href="logout">Logout</a>
-                           </li>
-                         <li class="nav-item">
-                         <a class="nav-link active text-light fs-5 " aria-current="page" href="Home.jsp">Home</a>
-                        </li>
- <li class="nav-item">
-                       <a class="nav-link active text-light fs-5 " aria-current="page" href="#">${sessionScope.firstName} ${sessionScope.lastName}</a>
-                        </li>
-                                    </ul>
+                <li class="nav-item">
+                 <a class="nav-link active text-light fs-5 " aria-current="page" href="logout">Logout</a>
+                </li>
+                 <li class="nav-item">
+                 <a class="nav-link active text-light fs-5 " aria-current="page" href="Home.jsp">Home</a>
+                 </li>
+                 <li class="nav-item">
+                 <a class="nav-link active text-light fs-5 " aria-current="page" href="#">${sessionScope.firstName} ${sessionScope.lastName}</a>
+                  </li>
 
             </ul>
         </div>

@@ -72,26 +72,23 @@ ${objectError.defaultMessage}<br>
                              <div class="alert alert-danger" role="alert">${errorsMsg}</div>
                          </c:if>
 
-
                    <h6 class="card-title mb-3 text-dark fs-2">
                  <c:choose>
-                                    <c:when test="${admin}">
-                                        Admin
-                                    </c:when>
-                                    <c:when test="${departmentAdmin}">
-                                        Department Admin
-                                    </c:when>
+                         <c:when test="${admin}">
+                             Admin
+                         </c:when>
+                         <c:when test="${departmentAdmin}">
+                             Department Admin
+                         </c:when>
 
-                                </c:choose>
-
+                 </c:choose>
                    Sign In</h6>
 
-
                     <div class="mb-3">
-                                       <label for="email" class="form-label text-dark">Email</label>
-                                       <input type="email" class="form-control" name="email" value="${dto.email}"  id="email" aria-describedby="emailHelp">
-                                       <span id="emailError" class="text-danger"></span>
-                                   </div>
+                          <label for="email" class="form-label text-dark">Email</label>
+                          <input type="email" class="form-control" name="email" value="${dto.email}"  id="email" aria-describedby="emailHelp">
+                          <span id="emailError" class="text-danger"></span>
+                    </div>
 
                    <div class="mb-3">
                        <label for="password" class="form-label text-dark">Password</label>
@@ -102,32 +99,30 @@ ${objectError.defaultMessage}<br>
 
 
                  <div class="mb-3">
-                                    <div class="captcha">
-                                        <label for="captcha-input">Enter Captcha</label>
-                                        <div id="captchaPreview" class="mb-2 bg-white p-2 text-center border"></div>
-                                        <div class="captcha d-flex align-items-center">
-                                            <input type="text" name="captcha" id="captcha" placeholder="Enter captcha text" class="form-control me-2">
-                                            <button type="button" class="btn btn-secondary" onclick="generateCaptcha()">
-                                                <i class="fas fa-sync-alt"></i>
-                                                 &#8635;
-                                            </button>
-                                        </div>
-                                        <span id="captchaError" class="text-danger"></span>
-                                    </div>
-                                </div>
+                      <div class="captcha">
+                        <label for="captcha-input">Enter Captcha</label>
+                        <div id="captchaPreview" class="mb-2 bg-white p-2 text-center border"></div>
+                        <div class="captcha d-flex align-items-center">
+                            <input type="text" name="captcha" id="captcha" placeholder="Enter captcha text" class="form-control me-2">
+                            <button type="button" class="btn btn-secondary" onclick="generateCaptcha()">
+                                <i class="fas fa-sync-alt"></i>
+                                 &#8635;
+                            </button>
+                        </div>
+                          <span id="captchaError" class="text-danger"></span>
+                      </div>
+                </div>
 
           <div class="mb-1 mt-3">
                 <div class="container">
                     <div class="row">
                       <div class="col">
                     <input type="submit" value="Sign In" name="btn" id="btn" class="btn btn-primary me-5" >
-          </div>
-           <div class="col">
-
+                     </div>
+        <div class="col">
           <a class="fw-bold" style="text-decoration:none;" href="ForgotPassword.jsp">Forgot Password ?</a>
-
            </div>
-         </div>
+   </div>
          <c:if test="${!admin && !departmentAdmin}">
          <div class="mb-1 mt-3">
          <p>Don&#39t You have Registered Yet,

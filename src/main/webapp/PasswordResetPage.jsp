@@ -45,27 +45,21 @@
      <div class="container mt-5 mb-5 d-flex justify-content-center">
            <div class="card px-5 py-4 bg-light shadow-lg p-3 mb-5 bg-white rounded">
                <div class="card-body">
-<span class="text-danger">
-<c:forEach items="${errors}" var="objectError">
-${objectError.defaultMessage}<br>
-</c:forEach>
+                   <span class="text-danger">
+                   <c:forEach items="${errors}" var="objectError">
+                   ${objectError.defaultMessage}<br>
+                   </c:forEach>
+                   </span>
 
-
-</span>
-
-
-   </span>
                    <span class="text-success fs-4 fw-bold">${msg}</span>
-                            <span class="text-success fs-4 fw-bold">${message}</span>
+                   <span class="text-success fs-4 fw-bold">${message}</span>
 
                    <h6 class="card-title mb-3 text-dark fs-1">Reset Password</h6>
-
-
                     <div class="mb-3">
-                                       <label for="email" class="form-label text-dark">Email</label>
-                                       <input type="email" value="${dto.email}" class="form-control" ${action='edit'?'readonly':''} name="email" id="email" aria-describedby="emailHelp" >
-                                       <span id="emailError" class="text-danger"></span>
-                                   </div>
+                        <label for="email" class="form-label text-dark">Email</label>
+                        <input type="email" value="${dto.email}" class="form-control" ${action='edit'?'readonly':''} name="email" id="email" aria-describedby="emailHelp" >
+                        <span id="emailError" class="text-danger"></span>
+                    </div>
 
                    <div class="mb-3">
                        <label for="password" class="form-label text-dark">Old Password</label>
@@ -74,26 +68,26 @@ ${objectError.defaultMessage}<br>
 
                    </div>
 
- <div class="mb-3">
+                   <div class="mb-3">
                        <label for="newPassword" class="form-label text-dark">New Password</label>
                        <input type="password" class="form-control"  name="newPassword" id="newPassword" aria-describedby="phoneHelp" >
                        <span id="passwordError" class="text-danger"></span>
 
                    </div>
 
-   <div class="mb-3">
+                   <div class="mb-3">
                          <label for="confirmPassword" class="form-label text-dark">Confirm New Password</label>
                          <input type="password" class="form-control"  name="confirmPassword" id="confirmPassword" aria-describedby="phoneHelp" >
                          <span id="passwordError" class="text-danger"></span>
 
                      </div>
 
-          <div class="mb-1 mt-3">
-                <div class="container">
-                    <div class="row">
-                      <div class="col">
-                    <input type="submit" value="Reset" name="reset" id="btn" class="btn btn-primary me-5" >
-</div>
+            <div class="mb-1 mt-3">
+               <div class="container">
+                 <div class="row">
+                  <div class="col">
+                   <input type="submit" value="Reset" name="reset" id="btn" class="btn btn-primary me-5" >
+                   </div>
 
            </div>
     </div>

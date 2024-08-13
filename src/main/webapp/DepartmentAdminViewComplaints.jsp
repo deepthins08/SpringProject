@@ -29,29 +29,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                  <li class="nav-item">
-                      <li class="nav-item">
-                              <a class="nav-link active text-light fs-5" aria-current="page" href="DepartmentAdmin.jsp">Home</a>
-                                        </li>
-                         <li class="nav-item">
+                    <li class="nav-item">
+                         <a class="nav-link active text-light fs-5" aria-current="page" href="DepartmentAdmin.jsp">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active text-light fs-5 " aria-current="page" href="departmentAdminLogout">Logout</a>
                      </li>
-                           <li>
-                           <a class="nav-link active text-light fs-5" aria-current="page" href="#"> ${departmentAdmin.name}</a>
-                       </li>
-                        </ul>
+                    <li>
+                         <a class="nav-link active text-light fs-5" aria-current="page" href="#"> ${departmentAdmin.name}</a>
+                    </li>
+            </ul>
 
-                   </div>
         </div>
+      </div>
     </div>
 </nav>
 <div class="col-md-6">
              <div class="d-flex justify-content-center mb-4 mt-3">
-                    <div class="card px-1 py-1 bg-light shadow-lg p-3 mb-5 bg-white rounded">
-                        <div class="card-body">
+                 <div class="card px-1 py-1 bg-light shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
                     <form action="departmentAdminViewComplaints" method="get">
-
-
-
                         <div class="row g-3 ">
                             <div class="col-auto ">
                                 <label for="type" class="form-label text-dark">Department Name</label>
@@ -64,7 +61,6 @@
                                     <option value="Water Department" ${selectedType == 'Water Department' ? 'selected' : ''}>Water Department</option>
                                 </select>
                             </div>
-
 
                             <div class="col-auto align-self-end">
                                 <input type="submit" value="Search" name="search" id="search" class="btn btn-primary">

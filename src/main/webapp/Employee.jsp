@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Page</title>
+    <title>Employee Page</title>
      <base href="http://localhost:8080/xworkzProject/">
 <style>
  .card {

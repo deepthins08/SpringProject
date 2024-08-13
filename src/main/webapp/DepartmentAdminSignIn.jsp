@@ -57,13 +57,12 @@ ${objectError.defaultMessage}<br>
 
                 <span class="text-danger fs-6 fw-bold">${mailMsg}</span>
                 <c:if test="${not empty errorsMsg}">
-                             <div class="alert alert-danger" role="alert">${errorsMsg}</div>
-                         </c:if>
-
+                     <div class="alert alert-danger" role="alert">${errorsMsg}</div>
+                </c:if>
 
                    <h6 class="card-title mb-3 text-dark fs-2">
-                                        Department Admin
-                                 </h6>
+                        Department Admin
+                   </h6>
 <div class="mb-4">
                     <label for="departmentId" class="form-label text-dark">Department</label>
                     <select class="form-select" id="departmentId" name="departmentId" onblur="setDepartmentId()">
@@ -76,10 +75,10 @@ ${objectError.defaultMessage}<br>
                 </div>
 
                     <div class="mb-3">
-                                       <label for="email" class="form-label text-dark">Email</label>
-                                       <input type="email" class="form-control" name="email" value="${dto.email}"  id="email" aria-describedby="emailHelp">
-                                       <span id="emailError" class="text-danger"></span>
-                                   </div>
+                         <label for="email" class="form-label text-dark">Email</label>
+                         <input type="email" class="form-control" name="email" value="${dto.email}"  id="email" aria-describedby="emailHelp">
+                         <span id="emailError" class="text-danger"></span>
+                    </div>
 
                    <div class="mb-3">
                        <label for="password" class="form-label text-dark">Password</label>
@@ -91,19 +90,19 @@ ${objectError.defaultMessage}<br>
 
 
                  <div class="mb-3">
-                                    <div class="captcha">
-                                        <label for="captcha-input">Enter Captcha</label>
-                                        <div id="captchaPreview" class="mb-2 bg-white p-2 text-center border"></div>
-                                        <div class="captcha d-flex align-items-center">
-                                            <input type="text" name="captcha" id="captcha" placeholder="Enter captcha text" class="form-control me-2">
-                                            <button type="button" class="btn btn-secondary" onclick="generateCaptcha()">
-                                                <i class="fas fa-sync-alt"></i>
-                                                 &#8635;
-                                            </button>
-                                        </div>
-                                        <span id="captchaError" class="text-danger"></span>
-                                    </div>
-                                </div>
+                     <div class="captcha">
+                        <label for="captcha-input">Enter Captcha</label>
+                        <div id="captchaPreview" class="mb-2 bg-white p-2 text-center border"></div>
+                        <div class="captcha d-flex align-items-center">
+                            <input type="text" name="captcha" id="captcha" placeholder="Enter captcha text" class="form-control me-2">
+                            <button type="button" class="btn btn-secondary" onclick="generateCaptcha()">
+                                <i class="fas fa-sync-alt"></i>
+                                 &#8635;
+                            </button>
+                         </div>
+                            <span id="captchaError" class="text-danger"></span>
+                         </div>
+                 </div>
 
           <div class="mb-1 mt-3">
                 <div class="container">

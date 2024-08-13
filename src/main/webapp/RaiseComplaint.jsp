@@ -172,7 +172,7 @@
                     <input type="submit" value="Register" name="btn" id="btn" class="btn btn-primary me-5" disabled>
                 </c:otherwise>
             </c:choose>
-                                        <input class="btn btn-primary ms-5 " type="reset" value="Reset">
+               <input class="btn btn-primary ms-5 " type="reset" value="Reset">
 
         </div>
 

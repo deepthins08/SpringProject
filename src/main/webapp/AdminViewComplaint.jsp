@@ -116,14 +116,14 @@
 
                            <input type="hidden" name="id" value="${complaint.id}">
                  <div class="input-group">
-                                                  <select class="form-select" name="departmentName">
-                                                     <option value="">Choose...</option>
-                                                     <option value="Drainage Department">Drainage Department</option>
-                                                     <option value="Electric Department">Electric Department</option>
-                                                     <option value="Plumber Department">Plumber Department</option>
-                                                    <option value="Wastage Department">Wastage Department</option>
-                                                     <option value="Water Department">Water Department</option>
-                                                     </select>
+                         <select class="form-select" name="departmentName">
+                          <option value="">Choose...</option>
+                          <option value="Drainage Department">Drainage Department</option>
+                          <option value="Electric Department">Electric Department</option>
+                          <option value="Plumber Department">Plumber Department</option>
+                          option value="Wastage Department">Wastage Department</option>
+                          <option value="Water Department">Water Department</option>
+                           </select>
 
 
 </c:if>
@@ -131,18 +131,18 @@
                         <c:if test="${complaint.status != 'resolved'}">
 
 
-                                <input type="hidden" name="id" value="${complaint.id}">
-                                  <div class="input-group">
-                                <select class="form-select" id="status" name="status">
-                                    <option value="0" ${selectedType == null ? 'selected' : ''}>Choose...</option>
-                                    <option value="active" ${selectedType == 'active' ? 'selected' : ''}>Active</option>
-                                     <option value="assigned" ${selectedType == 'assigned' ? 'selected' : ''}>Assigned</option>
+                        <input type="hidden" name="id" value="${complaint.id}">
+                          <div class="input-group">
+                        <select class="form-select" id="status" name="status">
+                           <option value="0" ${selectedType == null ? 'selected' : ''}>Choose...</option>
+                           <option value="active" ${selectedType == 'active' ? 'selected' : ''}>Active</option>
+                           <option value="assigned" ${selectedType == 'assigned' ? 'selected' : ''}>Assigned</option>
 
-                                    <option value="resolved" ${selectedType == 'resolved' ? 'selected' : ''}>Resolved</option>
-                                    <option value="pending" ${selectedType == 'pending' ? 'selected' : ''}>Pending</option>
+                           <option value="resolved" ${selectedType == 'resolved' ? 'selected' : ''}>Resolved</option>
+                           <option value="pending" ${selectedType == 'pending' ? 'selected' : ''}>Pending</option>
 
-                                </select>
-                                   <button type="submit" class="btn btn-primary">Update</button>
+                        </select>
+                           <button type="submit" class="btn btn-primary">Update</button>
                                  </div>
                                </form>
                         </td>

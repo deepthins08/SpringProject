@@ -90,7 +90,7 @@
                     <a class="nav-link active text-light fs-5" aria-current="page" href="admin/adminLogout">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-light fs-5" aria-current="page" href="#">${admin.name}</a>
+                    <a class="nav-link active text-light fs-5" aria-current="page" href="#">${sessionScope.admin.name}</a>
                 </li>
             </ul>
         </div>

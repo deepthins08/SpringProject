@@ -51,13 +51,11 @@
      <div class="container mt-5 mb-5 d-flex justify-content-center">
            <div class="card px-5 py-4 bg-light shadow-lg p-3 mb-5 bg-white rounded">
                <div class="card-body">
-<span class="text-danger">
-<c:forEach items="${errors}" var="objectError">
-${objectError.defaultMessage}<br>
-</c:forEach>
-
-
-</span>
+                  <span class="text-danger">
+                  <c:forEach items="${errors}" var="objectError">
+                  ${objectError.defaultMessage}<br>
+                  </c:forEach>
+                  </span>
 
                    <span class="text-danger fs-6 fw-bold">${mailMsg}</span>
 
@@ -66,19 +64,19 @@ ${objectError.defaultMessage}<br>
                    Please Enter Your Registered Email</h3>
 
                     <div class="mb-3">
-                                       <label for="email" class="form-label text-dark">Email</label>
-                                       <input type="email" class="form-control" name="email" value="${dto.email}"  id="email" aria-describedby="emailHelp">
-                                       <span id="emailError" class="text-danger"></span>
-                                   </div>
+                        <label for="email" class="form-label text-dark">Email</label>
+                        <input type="email" class="form-control" name="email" value="${dto.email}"  id="email" aria-describedby="emailHelp">
+                        <span id="emailError" class="text-danger"></span>
+                    </div>
 
           <div class="mb-1 mt-3">
                 <div class="container">
                     <div class="row">
                       <div class="col">
                     <input type="submit" value="Sign In" name="btn" id="btn" class="btn btn-primary me-5" >
-</div>
+                </div>
 
-           </div>
+          </div>
     </div>
 
 </form>

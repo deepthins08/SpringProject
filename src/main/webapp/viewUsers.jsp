@@ -30,15 +30,15 @@
  <ul class="navbar-nav ms-auto">
 
            <li class="nav-item">
-                                <a class="nav-link active text-light fs-5 " aria-current="page" href="admin/adminLogout">Logout</a>
-                             </li>
-                           <li class="nav-item">
-                           <a class="nav-link active text-light fs-5 " aria-current="page" href="Admin.jsp">Home</a>
+               <a class="nav-link active text-light fs-5 " aria-current="page" href="admin/adminLogout">Logout</a>
            </li>
-   <li class="nav-item">
-                           <a class="nav-link active text-light fs-5 " aria-current="page" href="#"> ${sessionScope.admin.name}</a>
+           <li class="nav-item">
+               <a class="nav-link active text-light fs-5 " aria-current="page" href="Admin.jsp">Home</a>
            </li>
-                       </ul>
+           <li class="nav-item">
+                <a class="nav-link active text-light fs-5 " aria-current="page" href="#"> ${sessionScope.admin.name}</a>
+           </li>
+ </ul>
 
         </div>
     </div>

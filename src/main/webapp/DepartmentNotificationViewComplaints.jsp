@@ -34,12 +34,12 @@
                          <li class="nav-item">
                          <a class="nav-link active text-light fs-5 " aria-current="page" href="DepartmentAdmin.jsp">Home</a>
                         </li>
- <li class="nav-item">
+                        <li class="nav-item">
                        <a class="nav-link active text-light fs-5 " aria-current="page" href="#"> ${sessionScope.departmentAdmin.name}</a>
                         </li>
-                                    </ul>
+                </ul>
 
-            </ul>
+
         </div>
     </div>
 </nav>

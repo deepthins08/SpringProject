@@ -122,9 +122,9 @@ public class AdminController {
             List<ComplaintsDTO> notifications = complaintService.getUnreadNotifications();
             int notificationCount = notifications.size();
 
-            // Format dates and times
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+//            // Format dates and times
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 
             List<Map<String, Object>> formattedNotifications = new ArrayList<>();
             Map<Integer, String> formattedDates = new HashMap<>();
