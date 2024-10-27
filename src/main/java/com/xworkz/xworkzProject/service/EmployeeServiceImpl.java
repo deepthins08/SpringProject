@@ -140,10 +140,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         message.setTo(employee.getEmail());
         message.setSubject("Your OTP for Login");
         message.setText("Dear " + employee.getName() + ",\n\n" +
-                "Your OTP for login is: " + otp + "\n\n" +
-                "This OTP will expires in 1 minute\n"+
+                "Your OTP for login is: " + otp + "\n" +
+                "This OTP will expires in 1 minute\n\n\n"+
                 "Thanks and Regards,\n" +
-                "XworkzProject Team");
+                "XworkzProject Team,\n"+
+                "© 2024 All Rights Reserved");
         emailSender.send(message);
     }
 
@@ -195,7 +196,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         message.setText("Dear " + user.getFirstName() + ",\n\n" +
                 "Your OTP for Confirmation is: " + otp + "\n\n" +
                 "Thanks and Regards,\n" +
-                "XworkzProject Team");
+                "XworkzProject Team,\n"+
+                "© 2024 All Rights Reserved");
         emailSender.send(message);
     }
 

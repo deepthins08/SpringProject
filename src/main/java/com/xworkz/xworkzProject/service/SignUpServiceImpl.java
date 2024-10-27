@@ -93,7 +93,8 @@ public class SignUpServiceImpl implements SignUpService {
         message.setText("Dear " + signUpDTO.getFirstName() + " " + signUpDTO.getLastName() + ", You have been successfully Signed Up,\n\n" +
                 "Please Sign in through this password: " +decryptPassword + "\n\n" +
                 "Thanks and Regards,\n" + " " +
-                "XworkzProject Team");
+                "XworkzProject Team,\n"+
+                "© 2024 All Rights Reserved");
         emailSender.send(message);
     }
 

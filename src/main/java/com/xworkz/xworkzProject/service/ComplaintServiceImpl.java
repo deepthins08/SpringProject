@@ -7,6 +7,10 @@ import com.xworkz.xworkzProject.repo.ComplaintRepo;
 import com.xworkz.xworkzProject.repo.NotificationRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -50,8 +54,11 @@ public class ComplaintServiceImpl implements ComplaintService{
     }
 
     @Override
-    public List<ComplaintsDTO> getComplaintsByUserIdAndStatus(int userId, String status) {
-        return complaintRepo.findByUserIdAndStatus(userId, status);
+    public Page<ComplaintsDTO> getComplaintsByUserIdAndStatus(int userId, String status,int page, int pageSize) {
+        Pageable pageable = PageRequest.of(page, pageSize);
+        Page<ComplaintsDTO> complaintsPage = complaintRepo.findByUserIdAndStatus(userId, status, pageable);
+        return complaintsPage;
+
     }
 
 
@@ -133,5 +140,10 @@ public class ComplaintServiceImpl implements ComplaintService{
         }
     }
 
-
+//    public Page<ComplaintsDTO> getComplaintsByStatusWithPagination(String status, int page, int pageSize) {
+//        List<ComplaintsDTO> complaints = complaintRepo.findComplaintsByStatusWithPagination(status, page, pageSize);
+//        long totalComplaints = complaintRepo.countComplaintsByStatus(status); // Assuming you have a count method in the repository
+//
+//        return new PageImpl<>(complaints, PageRequest.of(page, pageSize), totalComplaints);
+//    }
 }

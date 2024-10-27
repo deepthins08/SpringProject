@@ -11,6 +11,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -97,7 +98,10 @@ public class RaiseComplaintController{
     }
 
     @GetMapping("/viewComplaints")
-    public String viewComplaints(Model model, HttpSession session, @RequestParam(value = "status", required = false) String status) {
+    public String viewComplaints(Model model, HttpSession session,
+                                 @RequestParam(value = "status", required = false) String status,
+                                 @RequestParam(defaultValue = "0") int page) {
+
         // Retrieve the userId from the session
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null || userId == 0) {
@@ -107,12 +111,24 @@ public class RaiseComplaintController{
         if (status == null) {
             status = "active"; // default to "active" if no status is provided
         }
-        List<ComplaintsDTO> complaints = complaintService.getComplaintsByUserIdAndStatus(userId, status);
-        if (complaints.isEmpty()) {
+
+        int pageSize = 6;
+        Page<ComplaintsDTO> complaints = complaintService.getComplaintsByUserIdAndStatus(userId, status,page,pageSize);
+       // Number of records per page
+        if (complaints.getTotalPages() == 0) {
             model.addAttribute("complaintMsg", "No complaints found");
+            model.addAttribute("hasNext", false);
+            model.addAttribute("hasPrevious", false);
         } else {
-            model.addAttribute("complaints", complaints);
+            model.addAttribute("complaints", complaints.getContent());
+            model.addAttribute("currentPage", page);
+            model.addAttribute("totalPages", complaints.getTotalPages());
+            model.addAttribute("hasNext", complaints.hasNext());
+            model.addAttribute("hasPrevious", complaints.hasPrevious());
+            model.addAttribute("selectedStatus", status);
         }
+
+
         model.addAttribute("selectedStatus", status);
         return "ViewComplaint";
     }

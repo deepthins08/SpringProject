@@ -4,6 +4,9 @@ import com.xworkz.xworkzProject.dto.ComplaintsDTO;
 import com.xworkz.xworkzProject.dto.NotificationsDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
@@ -43,14 +46,21 @@ public class ComplaintRepoImpl implements ComplaintRepo{
 
 
     @Override
-    public List<ComplaintsDTO> findByUserIdAndStatus(int userId, String status) {
+    public Page<ComplaintsDTO> findByUserIdAndStatus(int userId, String status, Pageable pageable) {
         EntityManager entityManager = this.entityManagerFactory.createEntityManager();
         try {
             Query query= entityManager.createQuery("select c FROM ComplaintsDTO c WHERE c.userId = :userId AND c.status = :status", ComplaintsDTO.class);
+
             query.setParameter("userId", userId);
             query.setParameter("status", status);
-            List<ComplaintsDTO> list=   query.getResultList();
-            return list;
+            int totalRows = query.getResultList().size();
+
+            query.setFirstResult((int) pageable.getOffset());
+            query.setMaxResults(pageable.getPageSize());
+
+            List<ComplaintsDTO> complaints = query.getResultList();
+
+            return new PageImpl<>(complaints, pageable, totalRows);
         } finally {
             entityManager.close();
         }
@@ -183,8 +193,29 @@ public class ComplaintRepoImpl implements ComplaintRepo{
         }
     }
 
+//    @Override
+//    public List<ComplaintsDTO> findComplaintsByStatusWithPagination(String status, int page, int pageSize) {
+//        EntityManager entityManager = this.entityManagerFactory.createEntityManager();
+//        int firstResult = page * pageSize;
+//
+//        String jpql = "SELECT c FROM ComplaintsDTO c WHERE c.status = :status";
+//        Query query = entityManager.createQuery(jpql, ComplaintsDTO.class);
+//        query.setParameter("status", status);
+//        query.setFirstResult(firstResult);
+//        query.setMaxResults(pageSize);
+//
+//        return query.getResultList();
+//    }
 
+    @Override
+    public long countComplaintsByStatus(String status) {
+        EntityManager entityManager = this.entityManagerFactory.createEntityManager();
+        String jpql = "SELECT COUNT(c) FROM ComplaintsDTO c WHERE c.status = :status";
+        Query query = entityManager.createQuery(jpql);
+        query.setParameter("status", status);
 
+        return (Long) query.getSingleResult();
+    }
     }
 
 

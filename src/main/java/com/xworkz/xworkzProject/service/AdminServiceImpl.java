@@ -168,7 +168,8 @@ public class AdminServiceImpl implements AdminService {
                 "You have been successfully registered.\n\n" +
                 "Please sign in using this password: " + plainPassword + "\n\n" +
                 "Thanks and Regards,\n" +
-                "XworkzProject Team");
+                "XworkzProject Team,\n"+
+                "© 2024 All Rights Reserved");
         emailSender.send(message);
     }
 

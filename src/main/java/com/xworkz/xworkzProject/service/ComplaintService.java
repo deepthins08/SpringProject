@@ -2,6 +2,7 @@ package com.xworkz.xworkzProject.service;
 
 import com.xworkz.xworkzProject.dto.ComplaintsDTO;
 import com.xworkz.xworkzProject.dto.SignUpDTO;
+import org.springframework.data.domain.Page;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -11,7 +12,7 @@ public interface ComplaintService {
 
     boolean validateAndSave(ComplaintsDTO complaintsDTO);
 
-    List<ComplaintsDTO> getComplaintsByUserIdAndStatus(int userId, String status);
+    Page<ComplaintsDTO> getComplaintsByUserIdAndStatus(int userId, String status,int page, int pageSize);
 
     void sendEmail(SignUpDTO signUpDTO,ComplaintsDTO complaintsDTO);
 
@@ -33,5 +34,7 @@ public interface ComplaintService {
     Date convertToDateViaInstant(LocalDateTime dateToConvert);
 
     String formatNotificationDate(Date date);
+
+//    Page<ComplaintsDTO> getComplaintsByStatusWithPagination(String status, int pageNumber, int pageSize);
 
 }

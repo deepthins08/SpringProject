@@ -115,7 +115,8 @@ public class DepartmentAdminServiceImpl implements DepartmentAdminService{
                 "You have been successfully registered.\n\n" +
                 "Please sign in to our application: \n\n" +
                 "Thanks and Regards,\n" +
-                "XworkzProject Team");
+                "XworkzProject Team,\n"+
+                "© 2024 All Rights Reserved");
         emailSender.send(message);
     }
 
